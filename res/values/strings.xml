@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">BookMyTable</string>
+    <string name="logo">Logo</string>
     <string name="action_settings">Settings</string>
     <string name="btn_register">&#160;&#160;&#160;SIGN UP</string>
     <string name="btn_login">&#160;&#160;&#160;LOGIN</string>
