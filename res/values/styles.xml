@@ -21,9 +21,20 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">left|center_vertical</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/lightBlack</item>
+    </style>
+    
+    <style name="text_input">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/lightBlack</item>
+        <item name="android:drawablePadding">10dp</item>
+            
     </style>
 
     <color name="lightBlack">#333333</color>
