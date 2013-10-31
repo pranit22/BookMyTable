@@ -26,6 +26,14 @@
             android:name="com.bookmytable.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name="com.bookmytable.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:parentActivityName="com.bookmytable.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bookmytable.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

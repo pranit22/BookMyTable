@@ -8,9 +8,10 @@
     <string name="btn_login">LOGIN</string>
     <string name="btn_guest">LOGIN AS GUEST USER</string>
     <string name="title_activity_login">LoginActivity</string>
-    
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="signin">SIGN IN</string>
-    
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

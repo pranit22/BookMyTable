@@ -26,13 +26,13 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/button1"
+        android:id="@+id/username"
         style="@style/text_input"
         android:drawableLeft="@drawable/icon_login"
         android:hint="@string/username" />
 
     <EditText
-        android:id="@+id/button2"
+        android:id="@+id/password"
         style="@style/text_input"
         android:drawableLeft="@drawable/icon_password"
         android:inputType="textPassword"
@@ -42,6 +42,7 @@
         android:id="@+id/button3"
         style="@style/main_button"
         android:gravity="center"
-        android:text="@string/signin" />
+        android:text="@string/signin"
+        android:onClick="login" />
 
 </LinearLayout>
