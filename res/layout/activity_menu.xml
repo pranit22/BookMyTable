@@ -38,21 +38,28 @@
 
     <Button
         android:id="@+id/button1"
-        style="@style/main_button"
+        style="@style/big_button"
         android:drawableLeft="@drawable/icon_add"
-        android:text="@string/btn_register" />
+        android:text="@string/btn_book_table"
+        android:onClick="bookATable" />
 
     <Button
         android:id="@+id/button2"
-        style="@style/main_button"
-        android:drawableLeft="@drawable/icon_login"
-        android:text="@string/btn_login"
-        android:onClick="navigateToLoginActivity" />
+        style="@style/big_button"
+        android:drawableLeft="@drawable/icon_edit"
+        android:text="@string/btn_manage_booking" />
 
     <Button
         android:id="@+id/button3"
-        style="@style/main_button"
-        android:drawableLeft="@drawable/icon_guest"
-        android:text="@string/btn_guest" />
+        style="@style/big_button"
+        android:drawableLeft="@drawable/icon_login"
+        android:text="@string/btn_profile" />
+    
+    <Button
+        android:id="@+id/button4"
+        style="@style/big_button"
+        android:drawableLeft="@drawable/icon_exit"
+        android:text="@string/btn_exit" 
+        android:onClick="exit"/>
 
 </LinearLayout>

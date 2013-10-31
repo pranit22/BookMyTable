@@ -19,5 +19,11 @@
     <string name="title_activity_checkin">CheckinActivity</string>
     <string name="title_activity_pay_now">PayNowActivity</string>
     <string name="title_activity_payment_details">PaymentDetailsActivity</string>
+    <string name="btn_book_table">BOOK A TABLE</string>
+    <string name="btn_manage_booking">MANAGE BOOKINGS</string>
+    <string name="btn_profile">EDIT PROFILE</string>
+    <string name="btn_exit">EXIT</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_table_selection">TABLE SELECTION</string>
 
 </resources>

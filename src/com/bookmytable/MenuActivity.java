@@ -1,10 +1,10 @@
 package com.bookmytable;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+import android.view.View;
 
 public class MenuActivity extends Activity
 {
@@ -24,6 +24,17 @@ public class MenuActivity extends Activity
 	return true;
     }
 
-     	
+    public void bookATable(View view)
+    {
+	startActivity(new Intent(this, BookingActivity.class));
+    }
+    
+    public void exit(View view)
+    {
+	Intent intent = new Intent(Intent.ACTION_MAIN);
+	intent.addCategory(Intent.CATEGORY_HOME);
+	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	startActivity(intent);
+    }
 
 }
