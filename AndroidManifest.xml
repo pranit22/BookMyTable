@@ -34,6 +34,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bookmytable.MainActivity" />
         </activity>
+        <activity
+            android:name="com.bookmytable.BookingActivity"
+            android:label="@string/title_activity_booking" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.TableSelectionActivity"
+            android:label="@string/title_activity_table_selection" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.BookingConfirmationActivity"
+            android:label="@string/title_activity_booking_confirmation" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.CheckinActivity"
+            android:label="@string/title_activity_checkin" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.PayNowActivity"
+            android:label="@string/title_activity_pay_now" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.PaymentDetailsActivity"
+            android:label="@string/title_activity_payment_details" >
+        </activity>
     </application>
 
 </manifest>

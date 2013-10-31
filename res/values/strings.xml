@@ -13,5 +13,11 @@
     <string name="signin">SIGN IN</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_booking">BookingActivity</string>
+    <string name="title_activity_table_selection">TableSelectionActivity</string>
+    <string name="title_activity_booking_confirmation">BookingConfirmationActivity</string>
+    <string name="title_activity_checkin">CheckinActivity</string>
+    <string name="title_activity_pay_now">PayNowActivity</string>
+    <string name="title_activity_payment_details">PaymentDetailsActivity</string>
 
 </resources>
