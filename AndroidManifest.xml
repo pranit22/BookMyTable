@@ -33,15 +33,15 @@
         <activity
             android:name="com.bookmytable.BookingActivity"
             android:label="@string/title_activity_booking" >
+        </activity>
+        <activity
+            android:name="com.bookmytable.TableSelectionActivity"
+            android:label="@string/title_activity_table_selection" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.bookmytable.TableSelectionActivity"
-            android:label="@string/title_activity_table_selection" >
         </activity>
         <activity
             android:name="com.bookmytable.BookingConfirmationActivity"
