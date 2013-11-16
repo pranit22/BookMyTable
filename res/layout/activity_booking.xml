@@ -116,13 +116,15 @@
             <Button
                 android:id="@+id/button3"
                 style="@style/small_button"
-                android:text="@string/btn_cancel" />
+                android:text="@string/btn_cancel"
+                android:onClick="navigateToMenuActivity"/>
 
             <Button
                 android:id="@+id/button4"
                 style="@style/small_button"
                 android:drawableRight="@drawable/icon_arrow_right"
-                android:text="@string/btn_table_selection" />
+                android:text="@string/btn_table_selection"
+                android:onClick="navigateToTableSelectionActivity"/>
         </LinearLayout>
     </LinearLayout>
 
