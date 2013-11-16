@@ -22,4 +22,15 @@ public class BookingActivity extends Activity
 	return true;
     }
 
+    public void navigateToMenuActivity (View view)
+        {
+            startActivity(new Intent(this, MenuActivity.class));
+        }
+
+     public void navigateToTableSelectionActivity (View view)
+        {
+            startActivity(new Intent(this, TableSelectionActivity.class));
+        }
+
+
 }
