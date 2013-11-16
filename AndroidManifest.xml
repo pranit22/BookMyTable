@@ -33,6 +33,11 @@
         <activity
             android:name="com.bookmytable.BookingActivity"
             android:label="@string/title_activity_booking" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.bookmytable.TableSelectionActivity"
@@ -49,11 +54,7 @@
         <activity
             android:name="com.bookmytable.PayNowActivity"
             android:label="@string/title_activity_pay_now" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.bookmytable.PaymentDetailsActivity"

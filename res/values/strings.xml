@@ -26,4 +26,14 @@
     <string name="btn_cancel">CANCEL</string>
     <string name="btn_table_selection">TABLE SELECTION</string>
 
+    <string-array name="restaurants">
+        <item>Bottega Louie</item>
+        <item>Water Grill</item>
+        <item>Blossom Restaurant</item>
+        <item>Chaya Downtown</item>
+        <item>Gill\'s Indian Restaurant</item>
+        <item>Drago Centro</item>
+        <item>New Mikado</item>
+    </string-array>
+
 </resources>
