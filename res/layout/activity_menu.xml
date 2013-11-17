@@ -10,54 +10,57 @@
     tools:context=".MenuActivity" >
 
     <LinearLayout
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
-            android:background="@drawable/food_bg_small"
-         >
+        android:orientation="horizontal">
+        <TextView
+            style="@style/username_text"
+            android:text="Welcome Pranit"/>
+        <TextView
+            style="@style/username_text"
+            android:gravity="right"
+            android:text="Logout"/>
+    </LinearLayout>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:contentDescription="@string/logo"
-            android:src="@drawable/logo_symbol" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/food_bg"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:alpha="0.90"
             android:contentDescription="@string/logo"
-            android:src="@drawable/logo_small" />
-
+            android:src="@drawable/logo" />
     </LinearLayout>
 
     <Button
         android:id="@+id/button1"
-        style="@style/big_button"
+        style="@style/main_button"
         android:drawableLeft="@drawable/icon_add"
         android:text="@string/btn_book_table"
         android:onClick="bookATable" />
 
     <Button
         android:id="@+id/button2"
-        style="@style/big_button"
+        style="@style/main_button"
         android:drawableLeft="@drawable/icon_edit"
         android:text="@string/btn_manage_booking" />
 
     <Button
         android:id="@+id/button3"
-        style="@style/big_button"
+        style="@style/main_button"
         android:drawableLeft="@drawable/icon_login"
         android:text="@string/btn_profile" />
     
     <Button
         android:id="@+id/button4"
-        style="@style/big_button"
+        style="@style/main_button"
         android:drawableLeft="@drawable/icon_exit"
         android:text="@string/btn_exit" 
         android:onClick="exit"/>

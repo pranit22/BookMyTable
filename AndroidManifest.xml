@@ -12,7 +12,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".application.BookMyTable">
         <activity
             android:name="com.bookmytable.MainActivity"
             android:label="@string/app_name">
@@ -20,25 +21,19 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
+        </activity>
         <activity
             android:name="com.bookmytable.LoginActivity"
             android:label="@string/title_activity_login"></activity>
         <activity
             android:name="com.bookmytable.MenuActivity"
-            android:label="@string/title_activity_menu"
-            android:parentActivityName="com.bookmytable.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bookmytable.MainActivity" />
-        </activity>
+            android:label="@string/title_activity_menu"></activity>
         <activity
             android:name="com.bookmytable.BookingActivity"
             android:label="@string/title_activity_booking"></activity>
         <activity
             android:name="com.bookmytable.TableSelectionActivity"
-            android:label="@string/title_activity_table_selection">
-        </activity>
+            android:label="@string/title_activity_table_selection"></activity>
         <activity
             android:name="com.bookmytable.BookingConfirmationActivity"
             android:label="@string/title_activity_booking_confirmation"></activity>

@@ -1,22 +1,20 @@
 package com.bookmytable.services;
 
+import com.bookmytable.entities.User;
+import com.bookmytable.utilities.StaticContent;
+
 import java.util.HashMap;
 
 public class AuthenticationService {
-    private static HashMap<String, String> users = new HashMap<String, String>();
 
-    static {
-        users.put("pranit", "pranit123");
-        users.put("ankit", "ankit123");
-        users.put("ishita", "ishita123");
-    }
-
-    public static boolean login(String username, String password) {
+    public static User login(String username, String password) {
+        HashMap<String, User> users = StaticContent.users;
         if (users.containsKey(username)) {
-            if (users.get(username).equals(password)) {
-                return true;
+            User user = users.get(username);
+            if(user.getPassword().equals(password)) {
+                return user;
             }
         }
-        return false;
+        return null;
     }
 }
