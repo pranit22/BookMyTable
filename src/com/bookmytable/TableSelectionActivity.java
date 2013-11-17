@@ -1,23 +1,20 @@
 package com.bookmytable;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class TableSelectionActivity extends Activity implements View.OnClickListener
-{
+public class TableSelectionActivity extends Activity implements View.OnClickListener {
     private ImageView selected;
     ArrayList<ImageView> tables;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_selection);
 
@@ -40,7 +37,7 @@ public class TableSelectionActivity extends Activity implements View.OnClickList
         tables.add((ImageView) findViewById(R.id.t20));
         tables.add((ImageView) findViewById(R.id.t21));
 
-        for(ImageView table : tables) {
+        for (ImageView table : tables) {
             table.setOnClickListener(this);
         }
 
@@ -48,9 +45,9 @@ public class TableSelectionActivity extends Activity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        if(v.getClass().getSimpleName().equals("ImageView")) {
+        if (v.getClass().getSimpleName().equals("ImageView")) {
             selected = (ImageView) v;
-            for(ImageView table : tables) {
+            for (ImageView table : tables) {
                 table.setImageResource(getImageResourceFromTag(table.getTag()));
             }
             selected.setImageResource(getSelectedImageResourceFromTag(selected.getTag()));
@@ -58,45 +55,38 @@ public class TableSelectionActivity extends Activity implements View.OnClickList
     }
 
     private int getImageResourceFromTag(Object tag) {
-        if(tag.equals("2")) {
+        if (tag.equals("2")) {
             return R.drawable.tab2;
-        }
-        else if(tag.equals("4")) {
+        } else if (tag.equals("4")) {
             return R.drawable.tab4;
-        }
-        else {
+        } else {
             return R.drawable.tab6;
         }
     }
 
 
     private int getSelectedImageResourceFromTag(Object tag) {
-        if(tag.equals("2")) {
+        if (tag.equals("2")) {
             return R.drawable.tab2s;
-        }
-        else if(tag.equals("4")) {
+        } else if (tag.equals("4")) {
             return R.drawable.tab4s;
-        }
-        else {
+        } else {
             return R.drawable.tab6s;
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.table_selection, menu);
         return true;
     }
 
-    public void navigateToBookingActivity (View view)
-    {
+    public void navigateToBookingActivity(View view) {
         startActivity(new Intent(this, BookingActivity.class));
     }
 
-    public void navigateToBookingConfirmationActivity (View view)
-    {
+    public void navigateToBookingConfirmationActivity(View view) {
         startActivity(new Intent(this, BookingConfirmationActivity.class));
     }
 }

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bookmytable"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -12,62 +12,45 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.bookmytable.MainActivity"
-            android:label="@string/app_name" >
-
-        </activity>
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>
         <activity
             android:name="com.bookmytable.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity
             android:name="com.bookmytable.MenuActivity"
             android:label="@string/title_activity_menu"
-            android:parentActivityName="com.bookmytable.MainActivity" >
+            android:parentActivityName="com.bookmytable.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bookmytable.MainActivity" />
         </activity>
         <activity
             android:name="com.bookmytable.BookingActivity"
-            android:label="@string/title_activity_booking" >
-        </activity>
+            android:label="@string/title_activity_booking"></activity>
         <activity
             android:name="com.bookmytable.TableSelectionActivity"
-            android:label="@string/title_activity_table_selection" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:label="@string/title_activity_table_selection">
         </activity>
         <activity
             android:name="com.bookmytable.BookingConfirmationActivity"
-            android:label="@string/title_activity_booking_confirmation" >
-        </activity>
+            android:label="@string/title_activity_booking_confirmation"></activity>
         <activity
             android:name="com.bookmytable.CheckinActivity"
-            android:label="@string/title_activity_checkin" >
-        </activity>
+            android:label="@string/title_activity_checkin"></activity>
         <activity
             android:name="com.bookmytable.PayNowActivity"
-            android:label="@string/title_activity_pay_now" >
-
-        </activity>
+            android:label="@string/title_activity_pay_now"></activity>
         <activity
             android:name="com.bookmytable.PaymentDetailsActivity"
-            android:label="@string/title_activity_payment_details" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:label="@string/title_activity_payment_details"></activity>
     </application>
 
 </manifest>
