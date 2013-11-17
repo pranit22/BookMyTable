@@ -114,14 +114,14 @@
                 style="@style/small_button"
                 android:text="@string/btn_back"
                 android:drawableLeft="@drawable/icon_arrow_left"
-                android:onClick="navigateToBookingActivity"/>
+                android:onClick="navigateToTableSelectionActivity"/>
 
             <Button
                 android:id="@+id/button4"
                 style="@style/small_button"
                 android:drawableRight="@drawable/tick"
                 android:text="@string/btn_confirm"
-                android:onClick="navigateToBookingConfirmationActivity"/>
+                android:onClick="confirmBooking"/>
 
         </LinearLayout>
 
