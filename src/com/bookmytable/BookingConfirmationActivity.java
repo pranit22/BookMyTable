@@ -40,4 +40,8 @@ public class BookingConfirmationActivity extends Activity
                 .show();
     }
 
+    public void navigateToTableSelectionActivity(View view) {
+        startActivity(new Intent(this, TableSelectionActivity.class));
+    }
+
 }
