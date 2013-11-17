@@ -57,13 +57,15 @@
                 android:layout_marginRight="5dp"
                 android:src="@drawable/tab2"
                 android:clickable="true"
-                android:id="@+id/t1" />
+                android:tag="2"
+                android:id="@+id/t1"/>
             <ImageView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_marginRight="5dp"
                 android:src="@drawable/tab4"
                 android:clickable="true"
+                android:tag="4"
                 android:id="@+id/t5" />
             <ImageView
                 android:layout_height="wrap_content"
@@ -98,18 +100,21 @@
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/tab6"
                     android:clickable="true"
+                    android:tag="6"
                     android:id="@+id/t2" />
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/tab2"
+                    android:tag="2"
                     android:clickable="true"
                     android:id="@+id/t3" />
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:src="@drawable/tab6"
+                    android:tag="6"
                     android:clickable="true"
                     android:id="@+id/t4" />
 
@@ -138,6 +143,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t8" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -145,6 +151,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t9" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -152,12 +159,14 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t10" />
                 <ImageView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t11" />
             </LinearLayout>
 
@@ -172,6 +181,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t13" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -179,6 +189,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t14" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -186,6 +197,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t15" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -193,6 +205,7 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t16" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -200,12 +213,14 @@
                     android:layout_marginBottom="9dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t17" />
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t18" />
             </LinearLayout>
 
@@ -220,6 +235,7 @@
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/tab6"
                     android:clickable="true"
+                    android:tag="6"
                     android:id="@+id/t20" />
                 <ImageView
                     android:layout_height="wrap_content"
@@ -227,6 +243,7 @@
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/tab2"
                     android:clickable="true"
+                    android:tag="2"
                     android:id="@+id/t21" />
                 <ImageView
                     android:layout_height="wrap_content"
