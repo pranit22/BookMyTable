@@ -24,7 +24,11 @@
     <string name="btn_profile">EDIT PROFILE</string>
     <string name="btn_exit">EXIT</string>
     <string name="btn_cancel">CANCEL</string>
+    <string name="btn_back">BACK</string>
+    <string name="btn_confirm">CONFIRM</string>
     <string name="btn_table_selection">TABLE SELECTION</string>
+
+    <string name="t1">Table1</string>
 
     <string-array name="restaurants">
         <item>Bottega Louie</item>
