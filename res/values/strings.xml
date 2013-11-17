@@ -25,6 +25,7 @@
     <string name="btn_exit">EXIT</string>
     <string name="btn_cancel">CANCEL</string>
     <string name="btn_back">BACK</string>
+    <string name="btn_next">NEXT</string>
     <string name="btn_confirm">CONFIRM</string>
     <string name="btn_table_selection">TABLE SELECTION</string>
 
