@@ -1,9 +1,11 @@
 package com.bookmytable.entities;
 
+import java.io.Serializable;
+
 /**
  * Created by Pranit on 11/17/13.
  */
-public class User {
+public class User implements Serializable {
     private String username, password, name;
 
     public User(String username, String password, String name) {
