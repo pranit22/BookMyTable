@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
         if(bookMyTable.getLoggedInUser() != null) {
             startActivity(new Intent(this, MenuActivity.class));
         }
-
     }
 
     @Override
@@ -31,6 +30,10 @@ public class MainActivity extends Activity {
 
     public void navigateToLoginActivity(View view) {
         startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void loginAsGuestUser(View view) {
+        startActivity(new Intent(this, MenuActivity.class));
     }
 
 }

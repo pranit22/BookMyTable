@@ -52,22 +52,22 @@
             android:background="#FF999999" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/restaurant"
             style="@style/booking_summary"
             android:text="Yard House" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/datetime"
             style="@style/booking_summary"
             android:text="Thursday, October 27, 8:00 PM" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/guestCount"
             style="@style/booking_summary"
             android:text="Table for: 2" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/table"
             style="@style/booking_summary"
             android:text="Table: #2A" />
 

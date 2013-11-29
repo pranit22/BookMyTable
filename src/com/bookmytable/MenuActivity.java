@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bookmytable.application.BookMyTable;
 
 public class MenuActivity extends Activity {
 
@@ -12,6 +17,19 @@ public class MenuActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        TextView username = (TextView) findViewById(R.id.username);
+        BookMyTable bookMyTable = (BookMyTable) getApplicationContext();
+        if(bookMyTable.getLoggedInUser() == null) {
+            username.setText("Welcome, Guest");
+            Button button = (Button) findViewById(R.id.button2);
+            ((LinearLayout)button.getParent()).removeView(button);
+            button = (Button) findViewById(R.id.button3);
+            ((LinearLayout)button.getParent()).removeView(button);
+        }
+        else {
+            username.setText("Welcome, " + bookMyTable.getLoggedInUser().getName());
+        }
     }
 
     @Override
@@ -30,6 +48,11 @@ public class MenuActivity extends Activity {
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    public void logout(View view) {
+        ((BookMyTable) getApplicationContext()).setLoggedInUser(null);
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }

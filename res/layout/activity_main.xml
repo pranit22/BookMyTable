@@ -42,6 +42,7 @@
         android:id="@+id/button3"
         style="@style/main_button"
         android:drawableLeft="@drawable/icon_guest"
-        android:text="@string/btn_guest" />
+        android:text="@string/btn_guest"
+        android:onClick="loginAsGuestUser"/>
 
 </LinearLayout>

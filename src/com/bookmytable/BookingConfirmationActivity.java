@@ -7,13 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
+
+import com.bookmytable.entities.Booking;
+import com.bookmytable.utilities.Conversions;
 
 public class BookingConfirmationActivity extends Activity {
+    
+    Booking booking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_confirmation);
+        
+        booking = (Booking) getIntent().getSerializableExtra("booking");
+        ((TextView)findViewById(R.id.table)).setText("Table " + booking.getTable());
+        ((TextView)findViewById(R.id.restaurant)).setText(booking.getRestaurant());
+        ((TextView)findViewById(R.id.guestCount)).setText("Table for " + booking.getGuests());
+        ((TextView)findViewById(R.id.datetime)).setText(Conversions.printDateTime(booking.getDate()));
     }
 
     @Override
@@ -24,11 +36,16 @@ public class BookingConfirmationActivity extends Activity {
     }
 
     public void confirmBooking(View view) {
-
+        
         final Activity thisActivity = this;
         new AlertDialog.Builder(this)
                 .setTitle("Booking Successful!")
-                .setMessage("Congratulations, table 2A at Yard House on Thursday, October 27, 8:00 PM has been successfully booked!")
+                .setMessage("Congratulations," +
+                		" table "+ booking.getTable() +
+                		" for "+ booking.getGuests() +
+                		" at "+ booking.getRestaurant() +
+                		" on "+ Conversions.printDateTime(booking.getDate()) +
+                		" has been successfully booked!")
                 .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(thisActivity, MenuActivity.class));
@@ -38,7 +55,9 @@ public class BookingConfirmationActivity extends Activity {
     }
 
     public void navigateToTableSelectionActivity(View view) {
-        startActivity(new Intent(this, TableSelectionActivity.class));
+	Intent intent = new Intent(this, TableSelectionActivity.class);
+	intent.putExtra("booking", booking);
+        startActivity(intent);
     }
 
 }
