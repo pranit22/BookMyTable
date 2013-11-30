@@ -2,6 +2,11 @@ package com.bookmytable;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcAdapter.CreateNdefMessageCallback;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -11,7 +16,9 @@ import android.widget.TextView;
 
 import com.bookmytable.application.BookMyTable;
 
-public class MenuActivity extends Activity {
+import java.nio.charset.Charset;
+
+public class MenuActivity extends Activity implements CreateNdefMessageCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +27,18 @@ public class MenuActivity extends Activity {
 
         TextView username = (TextView) findViewById(R.id.username);
         BookMyTable bookMyTable = (BookMyTable) getApplicationContext();
-        if(bookMyTable.getLoggedInUser() == null) {
+        if (bookMyTable.getLoggedInUser() == null) {
             username.setText("Welcome, Guest");
             Button button = (Button) findViewById(R.id.button2);
-            ((LinearLayout)button.getParent()).removeView(button);
+            ((LinearLayout) button.getParent()).removeView(button);
             button = (Button) findViewById(R.id.button3);
-            ((LinearLayout)button.getParent()).removeView(button);
-        }
-        else {
+            ((LinearLayout) button.getParent()).removeView(button);
+        } else {
             username.setText("Welcome, " + bookMyTable.getLoggedInUser().getName());
         }
+
+        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        mNfcAdapter.setNdefPushMessageCallback(this, this);
     }
 
     @Override
@@ -53,6 +62,37 @@ public class MenuActivity extends Activity {
     public void logout(View view) {
         ((BookMyTable) getApplicationContext()).setLoggedInUser(null);
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+
+    public void checkin(View view) {
+        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        mNfcAdapter.setNdefPushMessageCallback(this, this);
+    }
+
+    @Override
+    public NdefMessage createNdefMessage(NfcEvent event) {
+        BookMyTable bookMyTable = (BookMyTable) getApplicationContext();
+        String username;
+        if (bookMyTable.getLoggedInUser() == null) {
+            username = "Guest";
+        }
+        else {
+            username = bookMyTable.getLoggedInUser().getName();
+        }
+        NdefMessage msg = new NdefMessage(
+                new NdefRecord[]{createMimeRecord(
+                        "application/com.tabletbookmytable.username", username.getBytes())
+                        , NdefRecord.createApplicationRecord("com.tabletbookmytable")
+                });
+        return msg;
+    }
+
+    public NdefRecord createMimeRecord(String mimeType, byte[] payload) {
+        byte[] mimeBytes = mimeType.getBytes(Charset.forName("USASCII"));
+        NdefRecord mimeRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA,
+                mimeBytes, new byte[0], payload);
+        return mimeRecord;
     }
 
 }

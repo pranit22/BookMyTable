@@ -60,8 +60,9 @@
     <Button
         android:id="@+id/button3"
         style="@style/main_button"
-        android:drawableLeft="@drawable/icon_login"
-        android:text="@string/btn_profile" />
+        android:drawableLeft="@drawable/login"
+        android:text="CHECK-IN"
+        android:onClick="checkin" />
     
     <Button
         android:id="@+id/button4"

@@ -1,20 +1,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MenuActivity" >
+    android:background="@drawable/back">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
         android:background="@drawable/food_bg_small"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="40dp"
@@ -34,16 +29,18 @@
             android:src="@drawable/logo_small" />
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp" >
+        android:background="@drawable/back">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/back">
+
 
             <TextView
                 android:id="@+id/textView1"
@@ -52,82 +49,97 @@
 
             <Spinner
                 android:id="@+id/spinner1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/textView1"
                 style="@style/form_caption"
-                android:text="Date: " />
+                android:text="Date: "
+                android:layout_marginTop="20dp" />
 
             <DatePicker
                 android:id="@+id/datePicker1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:layout_gravity="center" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/textView1"
                 style="@style/form_caption"
-                android:text="Time: " />
+                android:text="Time: "
+                android:layout_marginTop="20dp" />
 
             <TimePicker
                 android:id="@+id/timePicker1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/textView1"
                 style="@style/form_caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Guests: " />
+                android:text="Guests: "
+                android:layout_marginTop="20dp" />
 
-            <EditText style="@style/text_input_small"
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="-"
+                    android:onClick="decrementGuests"/>
+
+            <EditText
+                style="@style/text_input_small"
                 android:id="@+id/guests"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:layout_gravity="center"
+                android:text="2"/>
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="+"
+                    android:onClick="incrementGuests"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@style/small_button"
+                    android:text="@string/btn_cancel"
+                    android:onClick="navigateToMenuActivity" />
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/small_button"
+                    android:drawableRight="@drawable/icon_arrow_right"
+                    android:text="@string/btn_table_selection"
+                    android:onClick="navigateToTableSelectionActivity" />
+
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center" >
 
-            <Button
-                android:id="@+id/button3"
-                style="@style/small_button"
-                            android:text="@string/btn_cancel"
-                            android:onClick="navigateToMenuActivity"/>
-
-            <Button
-                android:id="@+id/button4"
-                style="@style/small_button"
-                android:drawableRight="@drawable/icon_arrow_right"
-                            android:text="@string/btn_table_selection"
-                            android:onClick="navigateToTableSelectionActivity"/>
-
-        </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
