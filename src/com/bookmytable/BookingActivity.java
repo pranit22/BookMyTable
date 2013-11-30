@@ -3,12 +3,8 @@ package com.bookmytable;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -24,8 +20,6 @@ import java.util.Calendar;
 
 public class BookingActivity extends Activity {
 
-    Button navigateToTableSelectionActivity;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +30,7 @@ public class BookingActivity extends Activity {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
         s.setAdapter(spinnerArrayAdapter);
 
-        navigateToTableSelectionActivity = (Button)findViewById(R.id.button4);
-        navigateToTableSelectionActivity.setEnabled(false);
-
-        final EditText guests = (EditText) findViewById(R.id.guests);
-        guests.addTextChangedListener(new TextWatcher() {
+        /*guests.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
 
@@ -60,14 +50,19 @@ public class BookingActivity extends Activity {
             public void afterTextChanged(Editable editable) {
 
             }
-        });
+        });*/
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.booking, menu);
-        return true;
+    public void incrementGuests(View view) {
+        EditText guests = (EditText) findViewById(R.id.guests);
+        guests.setText(Integer.toString(Integer.parseInt(guests.getText().toString()) + 1));
+    }
+
+    public void decrementGuests(View view) {
+        EditText guests = (EditText) findViewById(R.id.guests);
+        if (Integer.parseInt(guests.getText().toString()) != 1) {
+            guests.setText(Integer.toString(Integer.parseInt(guests.getText().toString()) - 1));
+        }
     }
 
     public void navigateToMenuActivity(View view) {
@@ -80,7 +75,7 @@ public class BookingActivity extends Activity {
         Calendar date = Conversions.getCalendarFromDateTimePicker(
                 (DatePicker) findViewById(R.id.datePicker1),
                 (TimePicker) findViewById(R.id.timePicker1));
-        int guests = Integer.parseInt(((EditText)findViewById(R.id.guests)).getText().toString());
+        int guests = Integer.parseInt(((EditText) findViewById(R.id.guests)).getText().toString());
 
         Booking booking = new Booking();
         booking.setUser(user);
@@ -92,6 +87,5 @@ public class BookingActivity extends Activity {
         intent.putExtra("booking", booking);
         startActivity(intent);
     }
-
 
 }

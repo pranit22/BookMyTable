@@ -1,8 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/back">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,16 +29,15 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_width="match_parent"
-        android:background="@drawable/back">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:background="@drawable/back">
+            android:padding="10dp">
 
 
             <TextView
@@ -117,29 +115,34 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="20dp">
-
-                <Button
-                    android:id="@+id/button3"
-                    style="@style/small_button"
-                    android:text="@string/btn_cancel"
-                    android:onClick="navigateToMenuActivity" />
-
-                <Button
-                    android:id="@+id/button4"
-                    style="@style/small_button"
-                    android:drawableRight="@drawable/icon_arrow_right"
-                    android:text="@string/btn_table_selection"
-                    android:onClick="navigateToTableSelectionActivity" />
-
-            </LinearLayout>
         </LinearLayout>
 
 
     </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/small_button"
+            android:text="@string/btn_cancel"
+            android:onClick="navigateToMenuActivity"
+            android:drawableLeft="@drawable/icon_arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"/>
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/small_button"
+            android:drawableRight="@drawable/icon_arrow_right"
+            android:text="@string/btn_table_selection"
+            android:onClick="navigateToTableSelectionActivity" />
+
+    </LinearLayout>
 
 </LinearLayout>

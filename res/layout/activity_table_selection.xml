@@ -34,15 +34,46 @@
             android:src="@drawable/logo_small" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView1"
-        style="@style/centered_caption"
-        android:layout_height="wrap_content"
-        android:text="Select Table" />
-
     <LinearLayout
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/tab"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Available"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/tabs"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Current Selection"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/tabb"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Not Available"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="fill_parent"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 

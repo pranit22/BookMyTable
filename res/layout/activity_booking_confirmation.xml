@@ -7,14 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".BookingConfirmationActivity" >
+    tools:context=".BookingConfirmationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_vertical"
         android:background="@drawable/food_bg_small"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="40dp"
@@ -35,41 +35,56 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView1"
-            style="@style/centered_caption"
-            android:layout_margin="5dp"
-            android:textSize="25dp"
-            android:text="BOOKING SUMMARY" />
-
         <LinearLayout
-            android:layout_height="2dp"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:background="#FF999999" />
+            android:padding="5dp"
+            android:background="@color/off_black_color"
+            android:layout_margin="20dp">
 
-        <TextView
-            android:id="@+id/restaurant"
-            style="@style/booking_summary"
-            android:text="Yard House" />
 
-        <TextView
-            android:id="@+id/datetime"
-            style="@style/booking_summary"
-            android:text="Thursday, October 27, 8:00 PM" />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:background="@color/off_white_color">
 
-        <TextView
-            android:id="@+id/guestCount"
-            style="@style/booking_summary"
-            android:text="Table for: 2" />
+                <TextView
+                    style="@style/centered_caption"
+                    android:text="Booking Summary"
+                    android:background="@color/off_black_color" />
 
-        <TextView
-            android:id="@+id/table"
-            style="@style/booking_summary"
-            android:text="Table: #2A" />
+                <TextView
+                    android:id="@+id/restaurant"
+                    style="@style/booking_summary"
+                    android:textSize="25dp"
+                    android:text="Yard House" />
+
+                <TextView
+                    android:id="@+id/datetime"
+                    style="@style/booking_summary"
+                    android:text="Thursday, October 27, 8:00 PM" />
+
+                <TextView
+                    android:id="@+id/guestCount"
+                    style="@style/booking_summary"
+                    android:text="Table for: 2" />
+
+                <TextView
+                    android:id="@+id/table"
+                    style="@style/booking_summary"
+                    android:text="Table: #2A"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_height="2dp"
@@ -86,16 +101,19 @@
                 android:text="Send Email"
                 android:id="@+id/checkBox"
                 style="@style/booking_summary_checkbox"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="10dp"
                 android:checked="false" />
 
             <CheckBox
                 android:text="Text Message"
                 android:id="@+id/checkBox"
                 style="@style/booking_summary_checkbox"
+                android:drawableLeft="@drawable/message"
+                android:drawablePadding="10dp"
                 android:checked="false" />
 
-            </LinearLayout>
-
+        </LinearLayout>
 
 
         <LinearLayout
@@ -103,29 +121,30 @@
             android:layout_width="match_parent"
             android:background="#FF999999" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center" >
-
-            <Button
-                android:id="@+id/button3"
-                style="@style/small_button"
-                android:text="@string/btn_back"
-                android:drawableLeft="@drawable/icon_arrow_left"
-                android:onClick="navigateToTableSelectionActivity"/>
-
-            <Button
-                android:id="@+id/button4"
-                style="@style/small_button"
-                android:drawableRight="@drawable/tick"
-                android:text="@string/btn_confirm"
-                android:onClick="confirmBooking"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/small_button"
+            android:text="@string/btn_back"
+            android:drawableLeft="@drawable/icon_arrow_left"
+            android:onClick="navigateToTableSelectionActivity" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/small_button"
+            android:drawableRight="@drawable/tick"
+            android:text="@string/btn_confirm"
+            android:onClick="confirmBooking" />
+
+    </LinearLayout>
 
 </LinearLayout>
