@@ -2,20 +2,30 @@ package com.bookmytable;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class PaymentDetailsActivity extends Activity {
+import java.nio.charset.Charset;
 
+public class PaymentDetailsActivity extends Activity implements NfcAdapter.CreateNdefMessageCallback {
 
+    NfcAdapter mNfcAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_details);
+
+        ((TextView)findViewById(R.id.amount)).setText(getIntent().getStringExtra("amount"));
 
         final EditText editText1 = (EditText) findViewById(R.id.ccnum1);
         final EditText editText2 = (EditText) findViewById(R.id.ccnum2);
@@ -91,11 +101,47 @@ public class PaymentDetailsActivity extends Activity {
 
     }
 
+    public void paynow(View view) {
+        if (checkLength(((EditText) findViewById(R.id.ccnum1)).getText().toString(), 4)
+                && checkLength(((EditText) findViewById(R.id.ccnum2)).getText().toString(), 4)
+                && checkLength(((EditText) findViewById(R.id.ccnum3)).getText().toString(), 4)
+                && checkLength(((EditText) findViewById(R.id.ccnum4)).getText().toString(), 4)
+                && checkLength(((EditText) findViewById(R.id.cvv)).getText().toString(), 3)) {
+
+            Toast.makeText(this, "Please tap your device with the tablet to confirm the payment!", Toast.LENGTH_LONG).show();
+            mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+            mNfcAdapter.setNdefPushMessageCallback(this, this);
+        }
+        else {
+            Toast.makeText(this, "Please make sure you have filled all the information!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void cancel(View view) {
+        startActivity(new Intent(this, MenuActivity.class));
+    }
+
+    private boolean checkLength(String string, int length) {
+        return string != null && string.length() == length;
+    }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.payment_details, menu);
-        return true;
+    public NdefMessage createNdefMessage(NfcEvent event) {
+        String amount = ((TextView) findViewById(R.id.amount)).getText().toString();
+
+        NdefMessage msg = new NdefMessage(
+                new NdefRecord[]{createMimeRecord(
+                        "application/com.tabletbookmytable.confirm", amount.getBytes())
+                        , NdefRecord.createApplicationRecord("com.tabletbookmytable")
+                });
+        return msg;
+    }
+
+    public NdefRecord createMimeRecord(String mimeType, byte[] payload) {
+        byte[] mimeBytes = mimeType.getBytes(Charset.forName("USASCII"));
+        NdefRecord mimeRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA,
+                mimeBytes, new byte[0], payload);
+        return mimeRecord;
     }
 
 }

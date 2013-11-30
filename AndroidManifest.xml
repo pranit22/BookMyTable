@@ -54,7 +54,8 @@
         </activity>
         <activity
             android:name="com.bookmytable.PaymentDetailsActivity"
-            android:label="@string/title_activity_payment_details"></activity>
+            android:label="@string/title_activity_payment_details">
+            </activity>
     </application>
 
 </manifest>
