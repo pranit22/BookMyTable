@@ -45,9 +45,6 @@
             android:name="com.bookmytable.BookingConfirmationActivity"
             android:label="@string/title_activity_booking_confirmation"></activity>
         <activity
-            android:name="com.bookmytable.CheckinActivity"
-            android:label="@string/title_activity_checkin"></activity>
-        <activity
             android:name="com.bookmytable.PayNowActivity"
             android:label="@string/title_activity_pay_now">
             <intent-filter>

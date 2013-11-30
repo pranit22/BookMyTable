@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bookmytable.application.BookMyTable;
 
@@ -30,8 +31,6 @@ public class MenuActivity extends Activity implements CreateNdefMessageCallback 
         if (bookMyTable.getLoggedInUser() == null) {
             username.setText("Welcome, Guest");
             Button button = (Button) findViewById(R.id.button2);
-            ((LinearLayout) button.getParent()).removeView(button);
-            button = (Button) findViewById(R.id.button3);
             ((LinearLayout) button.getParent()).removeView(button);
         } else {
             username.setText("Welcome, " + bookMyTable.getLoggedInUser().getName());
@@ -66,8 +65,7 @@ public class MenuActivity extends Activity implements CreateNdefMessageCallback 
 
 
     public void checkin(View view) {
-        NfcAdapter mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        mNfcAdapter.setNdefPushMessageCallback(this, this);
+        Toast.makeText(this, "Please tap your device with the tablet in order to check-in!", Toast.LENGTH_LONG).show();
     }
 
     @Override
