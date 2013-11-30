@@ -64,13 +64,14 @@
             style="@style/big_button"
             android:drawableLeft="@drawable/tick"
             android:text="PAY NOW"
-            android:onClick="bookATable" />
+            android:onClick="paynow" />
 
         <Button
             android:id="@+id/button2"
             style="@style/big_button"
             android:drawableLeft="@drawable/icon_exit"
-            android:text="CANCEL" />
+            android:text="CANCEL"
+            android:onClick="cancel"/>
 
     </LinearLayout>
 
