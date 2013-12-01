@@ -11,7 +11,7 @@
         android:required="false" />
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
     <application
@@ -54,8 +54,10 @@
         </activity>
         <activity
             android:name="com.bookmytable.PaymentDetailsActivity"
-            android:label="@string/title_activity_payment_details">
-            </activity>
+            android:label="@string/title_activity_payment_details"></activity>
+
+        <service android:name=".services.NotificationService" />
+
     </application>
 
 </manifest>
