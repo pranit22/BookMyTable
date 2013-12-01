@@ -12,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class PaymentDetailsActivity extends Activity implements NfcAdapter.Creat
         final EditText editText3 = (EditText) findViewById(R.id.ccnum3);
         final EditText editText4 = (EditText) findViewById(R.id.ccnum4);
         final EditText editText5 = (EditText) findViewById(R.id.cvv);
+        final Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
 
         editText1.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -74,7 +77,7 @@ public class PaymentDetailsActivity extends Activity implements NfcAdapter.Creat
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (keyEvent.getAction() == KeyEvent.ACTION_UP) {
                     if (editText4.getText().length() == 4) {
-                        editText4.clearFocus();
+                        spinner1.requestFocus();
                         InputMethodManager imm = (InputMethodManager) getSystemService(
                                 Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(editText4.getWindowToken(), 0);
@@ -84,20 +87,6 @@ public class PaymentDetailsActivity extends Activity implements NfcAdapter.Creat
             }
         });
 
-        editText5.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (keyEvent.getAction() == KeyEvent.ACTION_UP) {
-                    if (editText5.getText().length() == 3) {
-                        editText5.clearFocus();
-                        InputMethodManager imm = (InputMethodManager) getSystemService(
-                                Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(editText4.getWindowToken(), 0);
-                    }
-                }
-                return false;
-            }
-        });
 
     }
 
